@@ -304,29 +304,40 @@ h1, h2, h3, .logo {
 }
 
 /* =========================================
-   ADAPTACIÓN MÓVIL (MOBILE-FIRST)
+   ADAPTACIÓN MÓVIL (AJUSTADA Y CORREGIDA)
    ========================================= */
 @media (max-width: 768px) {
-    /* 1. Header y Navegación */
+    /* 1. Header Fijo */
     .header { 
-        padding: 15px 5%; 
+        padding: 12px 5%; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
+    /* Reducimos el logo para que no colapse la barra */
+    .header .logo { 
+        font-size: 0.85rem; 
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Ocultamos el botón secundario en la barra para dar espacio al icono */
     .header-right { 
-        flex: 0; /* Evita que el botón de reserva empuje el logo */
-    }
-    
-    .btn-reserva-nav {
-        padding: 8px 14px;
-        font-size: 0.75rem;
+        display: none; 
     }
 
+    /* Icono del menú hamburguesa visible y bien ubicado a la derecha */
     .menu-toggle {
-        display: block; /* Muestra el icono de menú hamburguesa */
-        margin-left: 15px;
+        display: block;
+        font-size: 1.6rem;
+        cursor: pointer;
+        padding-left: 10px;
     }
 
-    /* Convertimos la navegación en un menú desplegable vertical */
+    /* Menú desplegable vertical */
     .header .nav-links {
         position: absolute;
         top: 100%;
@@ -334,13 +345,13 @@ h1, h2, h3, .logo {
         width: 100%;
         background: rgba(23, 22, 22, 0.98);
         flex-direction: column;
-        padding: 20px 0;
+        padding: 25px 0;
         gap: 20px;
-        display: none; /* Oculto por defecto. Se mostrará con JS */
+        display: none;
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
     }
     
-    /* Esta clase se añade desde JS para abrir el menú */
     .header .nav-links.active {
         display: flex;
     }
@@ -353,39 +364,40 @@ h1, h2, h3, .logo {
     }
     
     .hero h1 { 
-        font-size: 2.2rem; /* Más pequeño para que quepa bien */
-        margin-top: 60px; /* Separación del header fijo */
+        font-size: 2.1rem; 
+        margin-top: 50px; 
     }
     
     .hero p {
         margin: 0 auto 30px;
+        font-size: 0.95rem;
     }
 
-    /* 3. Ajuste de márgenes y tamaños generales */
+    /* 3. Secciones y Títulos */
     .services-section, 
     .gallery-section, 
     .about-salon-section,
     .booking-section { 
-        padding: 70px 5%; 
+        padding: 60px 5%; 
     }
     
     .section-title h2,
     .salon-text h2,
     .booking-text h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
-    /* 4. Convertir Grids en una sola columna (Bloques apilados) */
+    /* 4. Columnas Apiladas */
     .services-grid, 
     .gallery-grid, 
     .salon-container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
     
-    .gallery-item { height: 280px; }
+    .gallery-item { height: 260px; }
     
-    /* 5. Formularios apilados */
+    /* 5. Formularios */
     .input-group {
         flex-direction: column;
         gap: 15px;
