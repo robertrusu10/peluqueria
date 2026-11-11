@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluqueria | Code by Rusu</title>
+    <!-- Fuentes de Google elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+    <header class="header">
+        <!-- 1. Logo (Izquierda) -->
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Peluquería | Code By Rusu<span></span></a>
+        
+        <!-- 2. Menú (Centro) -->
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="trabajos.html">Trabajos</a>
+            <a href="elsalon.html">El Salón</a>
+        </nav>
+
+        <!-- 3. Botón Reserva (Derecha) -->
+        <div class="header-right">
+            <a href="index.html#reserva" class="btn-reserva-nav">Reservar Cita</a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="sub-tag">Corte & Estilo de Autor</span>
+            <h1>El arte del detalle en cada cabello.</h1>
+            <p>Un espacio exclusivo diseñado para redefinir tu imagen personal mediante técnicas de precisión y productos orgánicos de alta gama.</p>
+            <a href="#reserva" class="btn-primary">Pedir Cita Online</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS (BENTO GRID) -->
+    <section id="servicios" class="services-section">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p>Tarifa general y rituales de cuidado capilar.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Corte & Estilismo</h3>
+                    <span class="price">35 €</span>
+                </div>
+                <p>Asesoramiento de imagen, lavado con ritual de aromaterapia, corte de precisión a tijera/máquina y peinado de acabado.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Arreglo de Barba Pro</h3>
+                    <span class="price">22 €</span>
+                </div>
+                <p>Perfilado con navaja clásica, toallas calientes con aceites esenciales y tratamiento hidratante de barba.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Color & Matiz</h3>
+                    <span class="price">Desde 50 €</span>
+                </div>
+                <p>Coloración sin amoníaco, mechas balayage personalizadas y baños de color para potenciar el brillo natural.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Tratamiento Orgánico</h3>
+                    <span class="price">40 €</span>
+                </div>
+                <p>Hidratación profunda con keratina botánica y masaje capilar relajante para revitalizar el cuero cabelludo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE RESERVA RÁPIDA -->
+    <section id="reserva" class="booking-section">
+        <div class="booking-container">
+            <div class="booking-text">
+                <h2>Reserva tu espacio</h2>
+                <p>Elige el servicio que deseas y nos pondremos en contacto al instante para confirmar tu hora exacta en el salón.</p>
+            </div>
+            <form class="booking-form" id="booking-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="tel" placeholder="Teléfono" required>
+                </div>
+                <div class="input-group">
+                    <select id="service-select" class="custom-select">
+                        <option value="Corte">Corte & Estilismo (35 €)</option>
+                        <option value="Barba">Arreglo de Barba (22 €)</option>
+                        <option value="Color">Color & Matiz (50 €)</option>
+                        <option value="Tratamiento">Tratamiento Orgánico (40 €)</option>
+                    </select>
+                    <input type="date" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border:none; cursor:pointer;">Confirmar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
