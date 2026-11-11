@@ -304,52 +304,51 @@ h1, h2, h3, .logo {
 }
 
 /* =========================================
-   ADAPTACIÓN MÓVIL (HEADER EN 2 FILAS)
+   ADAPTACIÓN MÓVIL (HEADER 2 FILAS COMPACTO)
    ========================================= */
 @media (max-width: 768px) {
-    /* 1. Header en dos filas con flex-wrap */
+    /* Header en dos filas */
     .header { 
         padding: 10px 5%; 
         display: flex;
-        flex-wrap: wrap; /* Permite que el botón baje a la segunda fila */
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         gap: 6px 0;
     }
     
-    /* Fila 1 (Izquierda): Logo */
+    /* Fila 1: Logo a la izquierda */
     .header .logo { 
         font-size: 0.82rem; 
         flex: 1;
         white-space: nowrap;
     }
 
-    /* Fila 1 (Derecha): Icono hamburguesa */
+    /* Fila 1: Icono hamburguesa a la derecha */
     .menu-toggle {
         display: block;
         font-size: 1.5rem;
         cursor: pointer;
     }
 
-    /* Fila 2: Contenedor del botón centrado debajo */
+    /* Fila 2: Pegado a la izquierda */
     .header-right { 
         display: flex;
         width: 100%;
-        justify-content: center;
-        margin-top: 4px;
+        justify-content: flex-start; /* Pegado a la izquierda */
+        margin-top: 2px;
     }
 
-    /* Botón adaptable a lo ancho */
+    /* Botón más pequeño y compacto */
     .btn-reserva-nav {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 7px 0;
-        font-size: 0.78rem;
-        border-radius: 20px;
+        display: inline-block;
+        width: auto;
+        padding: 4px 12px;
+        font-size: 0.72rem;
+        border-radius: 15px;
     }
 
-    /* Menú desplegable abre justo debajo de todo el header */
+    /* Menú desplegable */
     .header .nav-links {
         position: absolute;
         top: 100%;
@@ -368,7 +367,7 @@ h1, h2, h3, .logo {
         display: flex;
     }
 
-    /* 2. Ajuste del Hero para compensar la altura del header */
+    /* Hero */
     .hero { 
         padding: 0 5%; 
         text-align: center; 
@@ -377,7 +376,7 @@ h1, h2, h3, .logo {
     
     .hero h1 { 
         font-size: 2.1rem; 
-        margin-top: 90px; /* Evita que el header tape el texto */
+        margin-top: 85px; 
     }
     
     .hero p {
@@ -385,7 +384,7 @@ h1, h2, h3, .logo {
         font-size: 0.95rem;
     }
 
-    /* 3. Secciones y Títulos */
+    /* Secciones */
     .services-section, 
     .gallery-section, 
     .about-salon-section,
@@ -399,7 +398,7 @@ h1, h2, h3, .logo {
         font-size: 1.7rem;
     }
 
-    /* 4. Bloques apilados */
+    /* Grids apilados */
     .services-grid, 
     .gallery-grid, 
     .salon-container {
@@ -409,7 +408,7 @@ h1, h2, h3, .logo {
     
     .gallery-item { height: 260px; }
     
-    /* 5. Formularios */
+    /* Formularios */
     .input-group {
         flex-direction: column;
         gap: 15px;
