@@ -304,40 +304,52 @@ h1, h2, h3, .logo {
 }
 
 /* =========================================
-   ADAPTACIÓN MÓVIL (AJUSTADA Y CORREGIDA)
+   ADAPTACIÓN MÓVIL (HEADER EN 2 FILAS)
    ========================================= */
 @media (max-width: 768px) {
-    /* 1. Header Fijo */
+    /* 1. Header en dos filas con flex-wrap */
     .header { 
-        padding: 12px 5%; 
+        padding: 10px 5%; 
         display: flex;
+        flex-wrap: wrap; /* Permite que el botón baje a la segunda fila */
         justify-content: space-between;
         align-items: center;
+        gap: 6px 0;
     }
     
-    /* Reducimos el logo para que no colapse la barra */
+    /* Fila 1 (Izquierda): Logo */
     .header .logo { 
-        font-size: 0.85rem; 
+        font-size: 0.82rem; 
         flex: 1;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
-    /* Ocultamos el botón secundario en la barra para dar espacio al icono */
-    .header-right { 
-        display: none; 
-    }
-
-    /* Icono del menú hamburguesa visible y bien ubicado a la derecha */
+    /* Fila 1 (Derecha): Icono hamburguesa */
     .menu-toggle {
         display: block;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         cursor: pointer;
-        padding-left: 10px;
     }
 
-    /* Menú desplegable vertical */
+    /* Fila 2: Contenedor del botón centrado debajo */
+    .header-right { 
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 4px;
+    }
+
+    /* Botón adaptable a lo ancho */
+    .btn-reserva-nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 7px 0;
+        font-size: 0.78rem;
+        border-radius: 20px;
+    }
+
+    /* Menú desplegable abre justo debajo de todo el header */
     .header .nav-links {
         position: absolute;
         top: 100%;
@@ -345,8 +357,8 @@ h1, h2, h3, .logo {
         width: 100%;
         background: rgba(23, 22, 22, 0.98);
         flex-direction: column;
-        padding: 25px 0;
-        gap: 20px;
+        padding: 20px 0;
+        gap: 18px;
         display: none;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         text-align: center;
@@ -356,7 +368,7 @@ h1, h2, h3, .logo {
         display: flex;
     }
 
-    /* 2. Hero Section */
+    /* 2. Ajuste del Hero para compensar la altura del header */
     .hero { 
         padding: 0 5%; 
         text-align: center; 
@@ -365,7 +377,7 @@ h1, h2, h3, .logo {
     
     .hero h1 { 
         font-size: 2.1rem; 
-        margin-top: 50px; 
+        margin-top: 90px; /* Evita que el header tape el texto */
     }
     
     .hero p {
@@ -387,7 +399,7 @@ h1, h2, h3, .logo {
         font-size: 1.7rem;
     }
 
-    /* 4. Columnas Apiladas */
+    /* 4. Bloques apilados */
     .services-grid, 
     .gallery-grid, 
     .salon-container {
